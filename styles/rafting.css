@@ -1,0 +1,134 @@
+/* ---------- CSS Variables ---------- */
+:root {
+  --primary-color: #055a05;   /* forest green */
+  --secondary-color: #f4a261; /* warm sand */
+  --accent1-color: #264653;   /* dark slate blue */
+  --accent2-color: #e9c46a;   /* golden yellow */
+  --heading-font: "Times New Roman", Georgia, serif;
+  --body-font: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Body ---------- */
+body {
+  font-family: var(--body-font);
+  color: var(--accent1-color);
+}
+
+/* ---------- Layout Width ---------- */
+header, main, footer {
+  width: 840px;
+  margin: 0 auto;
+}
+
+/* ---------- Headings ---------- */
+h1, h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+}
+
+/* ---------- Spacing ---------- */
+nav, p, section, article {
+  margin: 16px;
+  padding: 8px;
+}
+
+/* ---------- Header ---------- */
+header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--accent2-color);
+}
+
+header .logo {
+  width: 80px;
+  height: auto;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 1rem;
+}
+
+header nav a {
+  color: var(--accent2-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+
+header nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* ---------- Hero Div ---------- */
+.hero {
+  position: relative;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero h1 {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  opacity: 0.7;
+  background-color: var(--accent1-color);
+  color: #fff;
+}
+
+.hero article {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(233, 196, 106, 0.85);
+  padding: 16px;
+}
+
+.hero article img {
+  float: right;
+  width: 125px;
+  margin-left: 12px;
+  border: 3px solid var(--accent1-color);
+}
+
+/* ---------- Social Media ---------- */
+.socialmedia {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.socialmedia a {
+  text-decoration: none;
+}
+
+.socialmedia img {
+  width: 32px;
+  height: 32px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--accent2-color);
+  padding: 16px;
+}
