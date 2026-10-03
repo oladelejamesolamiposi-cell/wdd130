@@ -7,12 +7,13 @@
   --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* Universal reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body {
   font-family: var(--body-font);
@@ -20,13 +21,14 @@ body {
   background-color: #fcfcfc;
 }
 
-/* Limit width and center content */
+
 header,
 main,
 footer {
   width: 840px;
   margin: 0 auto;
 }
+
 
 h1,
 h2 {
@@ -40,13 +42,15 @@ header nav li,
 header nav a,
 .history-grid p,
 .history-grid img,
+.adventure-grid figure,
+.adventure-grid img,
 footer p,
 footer nav {
   margin: 0;
   padding: 0;
 }
 
-/* ---------- Header ---------- */
+
 header {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -81,7 +85,7 @@ header nav a:hover {
   color: var(--secondary-color);
 }
 
-/* ---------- Hero Section ---------- */
+
 .hero {
   position: relative;
   margin-top: 20px;
@@ -111,18 +115,18 @@ header nav a:hover {
   right: 20px;
   background-color: rgba(233, 196, 106, 0.9);
   padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-/* Step 5, Instruction 5: Float the image right */
 .hero article img {
-  float: right;
   width: 125px;
   height: auto;
-  margin-left: 16px; /* Space between text and image */
   border: 3px solid var(--accent1-color);
+  flex-shrink: 0;
 }
 
-/* ---------- History Section ---------- */
 .history {
   margin-top: 30px;
   padding: 20px;
@@ -158,7 +162,6 @@ header nav a:hover {
   line-height: 1.4;
 }
 
-/* ---------- Adventures Section (Empty for now) ---------- */
 .adventures {
   margin-top: 30px;
   padding: 20px;
@@ -168,7 +171,38 @@ header nav a:hover {
   margin-bottom: 20px;
 }
 
-/* ---------- Footer ---------- */
+.adventure-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.adventure-grid figure {
+  flex: 1;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.adventure-grid img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+
+.adventure-grid figcaption {
+  font-size: 0.75rem;
+  padding: 8px 4px;
+  font-weight: bold;
+  color: var(--accent1-color);
+  background-color: var(--secondary-color);
+}
+
+/* ---------- Footer (CSS Flex) ---------- */
 footer {
   display: flex;
   justify-content: space-between;
@@ -198,4 +232,156 @@ footer p {
   width: 32px;
   height: 32px;
   display: block;
+}
+
+/* ---------- Contact Page Styles ---------- */
+
+.contact-info {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+/* Map Styling */
+.map-container iframe {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 350px;
+}
+
+/* Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--body-font);
+  width: 100%;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Radio and Checkbox Groups */
+.form-group fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form-group legend {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.form-group fieldset label,
+.checkbox-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: var(--secondary-color);
+  color: var(--accent1-color);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: var(--accent2-color);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Employee Section */
+.employees {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.employees h2 {
+  margin-bottom: 20px;
+}
+
+.employee-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  text-align: center;
+}
+
+.employee-grid figure {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.employee-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.employee-grid figcaption {
+  font-size: 0.8rem;
+  padding: 10px;
+  font-weight: bold;
+  color: var(--accent1-color);
+  background-color: var(--secondary-color);
 }
